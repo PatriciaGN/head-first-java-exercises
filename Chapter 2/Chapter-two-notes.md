@@ -19,3 +19,26 @@ When we need to deliver an application with many files, we can put all of them i
 OOP principles
 * An object **knows** things (**instance variables**) and **does** things (**methods**).
 * A **child class** can **inherit** instance variables and methods from a **parent class**. These variables and methods can be overwritten by the child class.
+
+In Java, to create an object we need **two classes**:
+* A clase for the type of object we want to use.
+* A class to test the previous class, that will hold the main method, in this method we will create and access objects of the new class type.
+
+```java
+class Book {
+    String title;
+    int pages;
+
+    void readIt() {
+        System.out.println("Reading the book");
+    }
+}
+
+public class BookTestDrive {
+    public static void main(String[] args) {
+        Book one = new Book();
+        one.title = "The Hobbit";
+        one.readIt();
+    }
+}
+```
