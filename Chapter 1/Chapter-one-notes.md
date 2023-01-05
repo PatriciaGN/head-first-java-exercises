@@ -3,7 +3,7 @@
 In Java, everything must go inside a class.
 The naming convention for the files are: "ClassName.java".
 
-To **compile** an application, we can write `javac MyApp.java` on the command line, and to **run** it, `java MyApp.java`.
+To **compile** an application, we can write `javac MyApp.java` on the command line, and to **run** it, `java MyApp.java` or `java MyApp` if it's already compiled.
 
 When the **Java virtual machine (JVM)** starts running, it will first look for the class that it is given in the command line. On every application, there must be **at least one class** and a **single main method** (this method will only appear once on every application and determine where our program should start running).
 
