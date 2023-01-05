@@ -5,15 +5,22 @@ public class EchoTestDrive {
     int x = 0;
     while (x < 4) {
       e1.hello();
-      ______________________
-      if (_______) {
+      e1.count = e1.count + 1;
+      if (x > 0) {
         e2.count = e2.count + 1;
       }
-      if (_____) {
+      if (x > 1) {
         e2.count = e2.count + e1.count;
       }
-      x = x + 1
+      x = x + 1;
     }
     System.out.println(e2.count);
   }
 }
+
+// Expected output
+// helloooo...
+// helloooo...
+// helloooo...
+// helloooo...
+// 10
