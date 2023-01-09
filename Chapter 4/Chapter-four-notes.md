@@ -87,6 +87,7 @@ Instance variables always get a default value if we don't assign it one:
 * **Instance variables** are **declared inside a class**, but not inside a method.
 * **Local variables** are **declared within a method**, and **MUST be initialized** before use.
 * **Method parameters** also need to be declared inside the method.
+* **Instance variables** are assigned values by default, **local variables** are not, we always need to initialize them.
 
 ## Comparing variables (primitives or references)
 To **compare** if two primitives are the same, or if two reference variables refer to a single object on the heap, we can use "==".
