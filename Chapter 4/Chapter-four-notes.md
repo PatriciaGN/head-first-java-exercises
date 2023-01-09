@@ -86,4 +86,12 @@ Instance variables always get a default value if we don't assign it one:
 
 * **Instance variables** are **declared inside a class**, but not inside a method.
 * **Local variables** are **declared within a method**, and **MUST be initialized** before use.
-* **Instance variables** are assigned values by default, **local variables** are not, we always need to initialize them.
+* **Method parameters** also need to be declared inside the method.
+
+## Comparing variables (primitives or references)
+To **compare** if two primitives are the same, or if two reference variables refer to a single object on the heap, we can use "==".
+
+But sometimes we want to check if **two objects are equal**, and in this case we need to use the `.equals()` method.
+
+The idea of equality fepends on the type of object. For example, if two strings have exactly the same word, they are equivalent despite being different objects on the heap. It can be more complicated for other types of objects.
+
