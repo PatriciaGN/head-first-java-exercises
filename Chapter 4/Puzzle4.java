@@ -3,33 +3,33 @@
 
 public class Puzzle4 {
   public static void main(String [] args) {
-    ___________________________________
+    Value [] values = new Value[6];
     int number = 1;
     int i = 0;
     while (i < 6) {
-      ___________________________
-      ___________________________
+      values[i] = new Value();
+      values[i].intValue = number;
       number = number * 10;
-      _________________
+      i = i + 1;
     }
 
     int result = 0;
     i = 6;
     while (i > 0) {
-      _________________
-      result = result + ___________________
+      i = i - 1;
+      result = result + values[i].doStuff(i);
     }
     System.out.println("result " + result);
   }
 }
 
-class ___________ {
+class Value {
   int intValue;
-  ________  ______ doStuff(int _________) {
+  public int doStuff(int factor) {
     if (intValue > 100) {
-      return _________________________
+      return intValue * factor;
     } else {
-      return _________________________
+      return intValue * (5 - factor);
     }
   }
 }
