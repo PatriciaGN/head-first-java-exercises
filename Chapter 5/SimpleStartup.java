@@ -1,4 +1,12 @@
-public class SimpleStartup {
+class SimpleStartup {
+
+  private int[] locationCells;
+  private int numOfHits = 0;
+
+  public void setLocationCells(int[] locs) {
+    locationCells = locs;
+  };
+
   public String checkyourself(int guess) { // METHOD String checkYourself(int userGuess)
     String result = "miss";                //   GET the user guess as an int parameter
     for (int cell : locationCells) {       //   REPEAT with each of the location cells in the int array
