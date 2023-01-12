@@ -22,9 +22,15 @@ Choose **for** loops over **while** loops when we know how many times we want to
 There are two ways of writing a for loop:
 `for (int i = 0; i < 10; i++) { // do something 10 times }`
 
-`for (int cat : catCollection) {}`
+Initialize the loop with a variable i which equals 0; continue the loop while i is less than 10 (*boolean test*, can be a true/false expresion, a test or an expression that returns a boolean); on each iteration, add one to i.
+
+OR
+
+`for (int cat : catCollection) { // pet cat }`
 
 For each cat in the array catCollection, do something.
+
+
 
 ## Post-increment operator
 
@@ -34,6 +40,38 @@ is the same as
 
 
 `counter = counter + 1`   and `counter = counter - 1`
+
+If they are placed on the other side, it will first increment the value and then use this new value:
+
+`int i = 0;  int x = ++i`
+
+In this expression, both i and x would equal 1.
+
+If we do it the other way, i would be 1 but x would be 0, as first, x gets the value of i and then, i is incremented:
+
+`int i = 0;  int x = i++;`
+
+## Casting primitives
+
+In Java, we can *cast* a value type into a different kind of type, but the program will cut off the remaining bits until the value fits the size of the new container.
+Examples:
+
+```java
+long y = 36;
+int x = y;   // This won't compile as a long is bigger than an int
+
+// But with casting:
+
+long y = 36;
+int x = (int) y;  // This will compile fine, x is now 42
+
+long y = 40002; // The number exceeds the 16-bit limit of a short
+short x = (short) y; // x now equals -25534!
+
+float f = 3.14f;
+int x = (int) f;  // x will equal 3
+```
+
 
 ## Random generator
 A more convenient way, but requires importing the Random class:
