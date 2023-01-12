@@ -6,10 +6,15 @@
 // 3 4
 // 3 3
 
-i++;
-if (i == 1) {
-System.out.println(i + " " + j);
 class Multifor {
-for(int j = 4; j > 2; j-- {
-for(int i = 0; i < 4; i++){
-public static void main(String[] args) {
+  public static void main(String[] args) {
+    for(int i = 0; i < 4; i++){
+      for(int j = 4; j > 2; j--) {
+        System.out.println(i + " " + j);
+      }
+      if (i == 1) {
+        i++;
+      }
+    }
+  }
+}
