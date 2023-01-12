@@ -1,5 +1,4 @@
 class SimpleStartup {
-
   private int[] locationCells;
   private int numOfHits = 0;
 
@@ -7,7 +6,7 @@ class SimpleStartup {
     locationCells = locs;
   };
 
-  public String checkyourself(int guess) { // METHOD String checkYourself(int userGuess)
+  public String checkYourself(int guess) { // METHOD String checkYourself(int userGuess)
     String result = "miss";                //   GET the user guess as an int parameter
     for (int cell : locationCells) {       //   REPEAT with each of the location cells in the int array
       if (guess == cell) {                 //     // COMPARE the user guess to the location cell

@@ -6,7 +6,7 @@ class SimpleStartupGame {
    SimpleStartup theStartup = new SimpleStartup();              
    int randomNum = (int) (Math.random() * 5);
     
-   int[] locations = (randomNum, randomNum + 1, randomNum + 2); 
+   int[] locations = {randomNum, randomNum + 1, randomNum + 2}; 
    theStartup.setLocationCells(locations);
    boolean isAlive = true;
    
@@ -16,7 +16,7 @@ class SimpleStartupGame {
      numOfGuesses++;     
      if (result.equals("kill")) {
        isAlive = false;
-       System.out.pringln("You took " + numOfGuesses + " guesses"); 
+       System.out.println("You took " + numOfGuesses + " guesses"); 
       } // End of if
    } // End of while
   } // End of method
