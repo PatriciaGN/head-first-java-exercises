@@ -3,11 +3,16 @@ import java.util.ArrayList;
 class Startup {
 
   private ArrayList<String> locationCells;
+  private String name;
 
   public void setLocationCells(ArrayList<String> locs) {
     locationCells = locs;
   };
 
+  public void(String n) {
+    name = n;
+  }
+  
   public String checkYourself(String userInput) { 
     String result = "miss";                
     int index = locationCells.indexOf(userInput); // If user input not on the list, indexOf() returns -1
