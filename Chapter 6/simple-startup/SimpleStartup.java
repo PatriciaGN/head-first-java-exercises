@@ -1,4 +1,4 @@
-class SimpleStartup {
+class Startup {
   private int[] locationCells;
   private int numOfHits = 0;
 
