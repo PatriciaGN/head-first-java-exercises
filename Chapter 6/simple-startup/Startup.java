@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class Startup {
+public class Startup {
 
   private ArrayList<String> locationCells;
   private String name;
@@ -9,7 +9,7 @@ class Startup {
     locationCells = locs;
   };
 
-  public void(String n) {
+  public void setName(String n) {
     name = n;
   }
   
@@ -24,6 +24,6 @@ class Startup {
           result = "hit";               
         }
       }
-      return result
+      return result;
   }
 }
