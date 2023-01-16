@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class GameHelper {
-  public int getUserInput(String prompt) {
   private static final String ALPHABET = "abcdefg";
   private static final int GRID_LENGTH = 7;
   private static final int GRID_SIZE = 49;
@@ -14,7 +13,7 @@ public class GameHelper {
   private int startupCount = 0;
   
   public String getUserInput(String prompt) {
-    System.out.print(prompt + ": ";
+    System.out.print(prompt + ": ");
     Scanner scanner = new Scanner(System.in);
     return scanner.nextLine().toLowerCase();
   }
@@ -25,7 +24,7 @@ public class GameHelper {
     int attempts = 0;
     boolean success = false;
     
-    starupCount ++;
+    startupCount ++;
     int increment = getIncrement();
     
     while(!success & attempts++ < MAX_ATTEMPTS) {
@@ -40,11 +39,11 @@ public class GameHelper {
       if (startupFits(startupCoords, increment)) {
         success = coordsAvailable(startupCoords);
       }
+    }
       savePositionToGrid(startupCoords);
       ArrayList<String> alphaCells = convertCoordsToAlphaFormat(startupCoords);
       // System.out.println("Placed at: " + alphacCells);
       return alphaCells;
-    }
   }
   
   private boolean startupFits(int[] startupCoords, int increment) {
@@ -64,7 +63,7 @@ public class GameHelper {
         return false;
       }
     } 
-    return true'
+    return true;
   }    
   
   private void savePositionToGrid(int[] startupCoords) {
@@ -75,7 +74,7 @@ public class GameHelper {
   
   private ArrayList<String> convertCoordsToAlphaFormat(int[] startupCoords) {
     ArrayList<String> alphaCells = new ArrayList<String>();
-    for(int index : starupCoords) {
+    for(int index : startupCoords) {
       String alphaCoords = getAlphaCoordsFromIndex(index);
       alphaCells.add(alphaCoords);
     }
@@ -94,7 +93,7 @@ public class GameHelper {
   }
     
   private int getIncrement() {
-    if (startupCount % 2 == 0 {
+    if (startupCount % 2 == 0) {
       return HORIZONTAL_INCREMENT;
     } else {
       return VERTICAL_INCREMENT;
