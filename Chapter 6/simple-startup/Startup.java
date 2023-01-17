@@ -17,9 +17,11 @@ public class Startup {
     String result = "miss";                
     int index = locationCells.indexOf(userInput); // If user input not on the list, indexOf() returns -1
       if (index >= 0) {      // If index is greater than or equal to zero, user guess is on the list, so remove it             
-        locationCells.remove(index);                 
+        locationCells.remove(index);    
+                     
         if (locationCells.isEmpty()) {
-          result = "kill";     
+          result = "kill"; 
+          System.out.println("Ouch! You sunk " + name + " :( ");    
         } else {
           result = "hit";               
         }
