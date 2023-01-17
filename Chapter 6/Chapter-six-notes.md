@@ -52,6 +52,27 @@ myArrayList.add(a); // -> Doesn't need an index
 * ArrayLists are parameterized, they do not have special array syntax, but they use something called **parameterized types**:
 ```ArrayList<int>```  -> The "`<int>`" is a type parameter, meaning a list of integers.
 
+## Short-Circuit Operators (&&, ||)
+* **&&**: The expression will be true only if both sides of the && are true. If the first expression is false, the JVM doesn't even bother to check the second one.
+* **||**: The expression will be true if either side is true. So if the first part is true, the JVM will no check the second one.
 
+You can check if a reference variable has been assigned to an object:
+```java
+if (refVar != null && refVar.isValidType()), {
+    // do 'got a valid type' stuff
+}
+```
 
+## Non-Short-Circuit Operators(&, |)
+They act like && and ||, but they force the JVM to always **check both sides of the expression**. They can also be used in another context, to manipulate bits.
 
+## Using the Java API
+
+In the Java API, **classes are grouped into packages**, and to use one of its classes, we need to know which package the class is in. We also need to know the **full name of the class** we want to use (except when the class is in the java.lang package).
+
+The full name of ArrayList would be `java.util.ArrayList`
+We need to tell Java which ArrayList we want to use, for which we have two options:
+
+* **Import**: Put an import statement at the top of the code file:
+`import java.util.ArrayList;`
+* **Type**: Type the full name everywhere in the code: ` java.util.ArrayList<Cat> list = new java.util.ArrayList<Cat>();`
