@@ -1,11 +1,11 @@
-import java.uti.ArrayList;
+import java.util.ArrayList;
 
 class StartupBust {
   private GameHelper helper = new GameHelper();
   private ArrayList<Startup> startups = new ArrayList<Startup>();  // Declare and initialize the variables we need
   private int numOfGuesses = 0;
   
-  private void setUpGame(); {
+  private void setUpGame() {
   // first make some Startups and give them locations
     Startup one = new Startup();
     one.setName("poniez");
@@ -21,7 +21,7 @@ class StartupBust {
     System.out.println("poniez, hacqi, cabista");        // Print brief instructions for user
     System.out.println("Try to sink them all in the fewest number of guesses");
     
-    for (Startup startup : starups) {   // Repeat with each Startup in the list
+    for (Startup startup : startups) {   // Repeat with each Startup in the list
       ArrayList<String> newLocation = helper.placeStartup(3);    // Ask the helper for a Startup location
       startup.setLocationCells(newLocation);  // Call the setter method on this Startup to give it the location the helper gave
     }
@@ -32,14 +32,14 @@ class StartupBust {
       String userGuess = helper.getUserInput("Enter a guess");  // Get user input
       checkUserGuess(userGuess); // Call our own checkUserGuess method
     }
-    finishGame() // Call our own finishGame method
+    finishGame(); // Call our own finishGame method
   }
   
   private void checkUserGuess(String userGuess) {
     numOfGuesses++;  // Increment the number of guesses the user has made
     String result = "miss"; // Asume it is a miss unless told otherwise
     
-    for (Startup starupToTest : startups) {  // Repeat with all Startups on the list
+    for (Startup startupToTest : startups) {  // Repeat with all Startups on the list
       result = startupToTest.checkYourself(userGuess); // Ask the Startup to check the user guess, looking for a hit (or kill)
       
       if (result.equals("hit")) {
@@ -56,12 +56,12 @@ class StartupBust {
     
   private void finishGame() {  // Print a message telling the user how they did in the game
     System.out.println("All Startups are dead! Your stock is now worthless");
-    if (numOfGuesses < = 18) {
-      System.out.prinln("It only took you " + numOfGuesses + " guesses.");
+    if (numOfGuesses <= 18) {
+      System.out.println("It only took you " + numOfGuesses + " guesses.");
       System.out.println("You got out before your options sank.");
     } else {
-      System.out.println("Took you long enough. " + numOfGuesses + " guesses.";
-      System.out.prinln("Fish are dancing with your options");   
+      System.out.println("Took you long enough. " + numOfGuesses + " guesses.");
+      System.out.println("Fish are dancing with your options");   
     }
   }
     
