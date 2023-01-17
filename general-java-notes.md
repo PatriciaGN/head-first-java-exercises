@@ -72,6 +72,7 @@ switch (day) {
 | `Arrays.sort(arr);`| Sorts an array in ascending order. | Modifies original array | `import java.util.Arrays;` OR `import java.util.*;`|
 |`Arrays.sort(arr, Collections.reverseOrder());` | Sorts an array in descending order.| Modified original array | `import java.util.Arrays;`, `import java.util.Collections;` OR `import java.util.*;`
 | `Arrays.toString(arr);` | Returns a string representation of the contents of the specified array. Needed to **print** arrays. | String with a list of the array's elements enclosed in squared brackets. | `import java.util.Arrays;` |
+|`Arrays.copyOf(int[] original, int newLength);`| It creates a copy of an array with a new length.| Returns a copy of the original array| `import java.util.Arrays`|
 
 To get the length, we can use the length variable: `arr.length`
 
