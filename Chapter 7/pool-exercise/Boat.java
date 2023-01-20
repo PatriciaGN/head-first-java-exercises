@@ -2,8 +2,15 @@
 // Take the code snippets and put them into the blank lines in Boat, Sailboat, Rowboat and TestBoats to obtain
 // the following ouput: drift drift hoist sail
 
-public class _____________ ______________ Boat {
-  public _____________ ______________ () {
-    System.out.print("_______________");
+public class Boat {
+  private int length;
+  public void setLength (int len) {
+     length = len;
+    }
+  public int getLength() {
+    return length;
+  }
+  public void move() {
+    System.out.print("drift ");
   }
 }
