@@ -54,18 +54,46 @@ switch (day) {
 // Outputs "Thursday" (day 4)
 ```
 
-# Java methods
-
-## String methods
+## String
 
 | Method | Description | Returns | Exception |
 |-----|------|-----|-----|
 |`str.replaceAll("a", "e");` | Replaces all ocurrences of "a" to "e". Uses Regex. |  Replaced string | PatternSyntaxException |
 | `str.replace("a", "e");` | Replaces all ocurrencences of "a" to "e". Does not use Regex, just chars. | Replaced string| |
 | `str.replaceFirst("a", "e");` | Replaces the first match "a" with "e". Uses Regex. | Replaced string | |
+|`str.toCharArray();` | Converts a string to a new char array | New char array| | 
 
 
-## Array methods
+
+## Array 
+
+To declare an Array
+
+For primitive types:
+```java
+int[] intArray = new int[3]; // each element of the array is initialised to 0
+int[] intArray = {1, 2, 3};
+int[] intArray = new int[]{1, 2, 3};
+
+// Since Java 8. Doc of IntStream: https://docs.oracle.com/javase/8/docs/api/java/util/stream/IntStream.html
+
+int [] intArray = IntStream.range(0, 100).toArray(); // From 0 to 99
+int [] intArray = IntStream.rangeClosed(0, 100).toArray(); // From 0 to 100
+int [] intArray = IntStream.of(12,25,36,85,28,96,47).toArray(); // The order is preserved.
+int [] mintArray = IntStream.of(12,25,36,85,28,96,47).sorted().toArray(); // Sort 
+```
+For classes, for example String, it's the same:
+```java
+String[] myStringArray = new String[3]; // each element is initialised to null
+String[] myStringArray = {"a", "b", "c"};
+String[] myStringArray = new String[]{"a", "b", "c"};
+```
+
+The third way of initializing is useful when you declare an array first and then initialize it, pass an array as a function argument, or return an array. The explicit type is required.
+```java
+String[] myStringArray;
+myStringArray = new String[]{"a", "b", "c"};
+```
 
 | Method | Description | Returns | Imports |
 |-----|------|-----|-----|
@@ -76,7 +104,7 @@ switch (day) {
 
 To get the length, we can use the length variable: `arr.length`
 
-## ArrayList methods
+## ArrayList 
 
 ```java
 ArrayList<Cat> catList = new ArrayList<Cat>; // We create a new ArrayList object
@@ -92,3 +120,15 @@ Cat cat1 = new Cat();
 |`arrList.indexOf(a);` | It tells us the index of a particular element | Int | `java.util.ArrayList;`|
 |`arrList.get(int);` | Gets the element with a particular index | Element | `java.util.ArrayList;`|
 |`arrList.remove(a);` | Removes a particular element of the ArrayList | - | `java.util.ArrayList;`|
+
+## Char methods
+
+In Java, char type is trated as an int, and trying to add two chars together adds their unicode values and returns an int.
+To concatenate chars together as a String, do:
+`return char1 + "" + char2`
+
+| Method | Description | Returns | Imports |
+|-----|------|-----|-----|
+|
+
+
