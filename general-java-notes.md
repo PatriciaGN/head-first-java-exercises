@@ -12,6 +12,26 @@ while(loop) {
 }
 ```
 
+## Static methods and variables
+
+A **static method** and **static variable** are methods and variables that belong to a class rather than an instance of a class. This means you can call a static method or variable without creating an object of the class. Static methods are sometimes called class methods.
+
+Example:
+```java
+public class A { 
+  static int result = 1;
+  static int counter = 1;
+  
+ public static int getNumber() {   
+   if (counter > 1) {
+     result = result * 2;
+   }
+   counter += 1;
+   return result;
+ }
+}
+```
+
 ## Switch statement
 
 Instead of writing many if..else statements, you can use the switch statement.
@@ -101,6 +121,8 @@ myStringArray = new String[]{"a", "b", "c"};
 |`Arrays.sort(arr, Collections.reverseOrder());` | Sorts an array in descending order.| Modified original array | `import java.util.Arrays;`, `import java.util.Collections;` OR `import java.util.*;`
 | `Arrays.toString(arr);` | Returns a string representation of the contents of the specified array. Needed to **print** arrays. | String with a list of the array's elements enclosed in squared brackets. | `import java.util.Arrays;` |
 |`Arrays.copyOf(int[] original, int newLength);`| It creates a copy of an array with a new length.| Returns a copy of the original array| `import java.util.Arrays`|
+|`String myString = String.format("name is %s, name);` 
+ `String myString = String.format("name is %f, 32.2);` |`%d` for int, byte, short, long, bigint, `%e/a/f/g` for floating points, `%b/h` for any type, `%x` for int| Interpolates a value or string into a string| Formatted string| |
 
 To get the length, we can use the length variable: `arr.length`
 
@@ -121,7 +143,7 @@ Cat cat1 = new Cat();
 |`arrList.get(int);` | Gets the element with a particular index | Element | `java.util.ArrayList;`|
 |`arrList.remove(a);` | Removes a particular element of the ArrayList | - | `java.util.ArrayList;`|
 
-## Char methods
+## Char 
 
 In Java, char type is trated as an int, and trying to add two chars together adds their unicode values and returns an int.
 To concatenate chars together as a String, do:
@@ -131,4 +153,23 @@ To concatenate chars together as a String, do:
 |-----|------|-----|-----|
 |
 
+## Integer
 
+| Method | Description | Returns | Imports |
+|-----|------|-----|-----|
+|`Integer.toString(2)` | | Returns the integer as a string | |
+
+## Object
+All objects we create in Java are subclasses of class Object and inherit all its methods.
+
+| Method | Description | Returns | Imports |
+|-----|------|-----|-----|
+|`Object.equals(anotherOrSameObject);` | Tells us if two objects are considered equal | Returns a boolean | |
+|`Object.getClass();` | Gives us the class that an object was instantiated from | Returns the name of the class | |
+|`Object.hashCode();` | Tells us the hashcode for the object (like its unique ID) | Returns the object number | |
+|`Object.toString();` | Gives us a String message with the name of the class and another number | Returns a String | |
+
+
+## Math
+
+`return (int) Math.ceil(month / 3.)`  -> To round up
