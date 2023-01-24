@@ -1,35 +1,35 @@
 // Fill in the code with the given snippets to obtain the following output:
-// java _____________
+// java Of76
 // 5 class Acts
 // 7 class Clowns
-// ____  Of76
+// 7 class Of76
 
-_____________ Nose {
-  __________________________
+interface Nose {
+  public int iMethod(); 
 }
 
-abstract class Picaso implements ________ {
- ___________________________________
+abstract class Picasso implements Nose {
+ public int iMethod() {
    return 7;
   }
 }
 
-class ___________ ______________________ _______________ {}
+class Clowns extends Picasso {}
 
-class _______________ _______________ _______________ {
-   _____________________
+class Acts extends Picasso {
+   public int iMethod() {
    return 5;
   }
 }
 
-public ______________ _______________ extends Clowns {
+public class Of76 extends Clowns {
   public static void main(String[] args) {
-    _______________________________
-    i[0] = new ________________
-    i[1] = new _________________
-    i[2] = new _________________
+    Nose[] i = new Nose[3];
+    i[0] = new Acts();
+    i[1] = new Clowns();
+    i[2] = new Of76();
     for (int x = 0; x < 3; x++) {
-      System.out.prinln(_____________ + " " + ____________.getClass());
+      System.out.prinln(i[x].iMethod() + " " + i[x].getClass());
     }
   }
 }
