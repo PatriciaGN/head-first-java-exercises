@@ -85,6 +85,7 @@ switch (day) {
 
 
 
+
 ## Array 
 
 To declare an Array
@@ -123,6 +124,7 @@ myStringArray = new String[]{"a", "b", "c"};
 |`Arrays.copyOf(int[] original, int newLength);`| It creates a copy of an array with a new length.| Returns a copy of the original array| `import java.util.Arrays`|
 |`String myString = String.format("name is %s, name);` 
  `String myString = String.format("name is %f, 32.2);` |`%d` for int, byte, short, long, bigint, `%e/a/f/g` for floating points, `%b/h` for any type, `%x` for int| Interpolates a value or string into a string| Formatted string| |
+|`charArray.stream().map(String::valueOf).collect(Collectors.joining());`| It converts a char array into a string| Returns the new string | `import java.util.Stream;`, `import java.util.stream.Collectors;`, `import java.util.List;`, `import java.util.Arrays;`  |
 
 To get the length, we can use the length variable: `arr.length`
 
@@ -142,6 +144,8 @@ Cat cat1 = new Cat();
 |`arrList.indexOf(a);` | It tells us the index of a particular element | Int | `java.util.ArrayList;`|
 |`arrList.get(int);` | Gets the element with a particular index | Element | `java.util.ArrayList;`|
 |`arrList.remove(a);` | Removes a particular element of the ArrayList | - | `java.util.ArrayList;`|
+|`str.stream().collect(Collectors.joining(", "));` | Converts a list of strings into a joined string | New joined string | `import java.util.Arrays;`, `import java.util.List;`, `import java.util.stream.Collectors;`, `import java.util.stream.Stream;` | 
+
 
 ## Char 
 
