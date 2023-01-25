@@ -36,7 +36,7 @@ The method that is at the *top* of the stack is the one that is running at the m
 
 If a local variable is a reference to an objec, only the variable (not the bject) goes on the stack.
 
-## Object creation
+## Object creation and constructors
 The three steps for creating an object are:
 * **Declaring a reference variable**
 * **Creating an object**
@@ -143,3 +143,141 @@ Four key things about constructors
 * **It MUST have the same name as the class and NO return value**
 * **If the class doesn't have a constructor, the compiler will place a no-arg default one**
 * We can have **more than one constructor** in a class, as long as the **argument lists are different**. Having more than one constructor in a class means we have **overloaded constructors**.
+
+### Inheritance and constructors
+
+When an object is created, it will have its own instance variables and **those from the superclasses it inherits from**, even if they are encapsulated.
+
+**All the constructors in an object's inheritance tree must run when we make a new object**.
+
+Even when a class is abstract and we can't create a new instance of it, an abtract class is still a superclass, so its constructor runs when someone makes an instance of a concrete subclass.
+
+Even if a superclass has instance variables that the subclass doesn't inherit (because they are private) the subclass still depends on the superclass methods to *use* those variables.
+
+Example:
+
+```java
+public class Feline {
+    public Feline () {
+        System.out.prinln("Making a Feline");
+    }
+}
+__________________
+
+public class Cat extends Feline {
+    public Cat() {
+        System.out.println("Making a Cat");
+    }
+}
+_________________
+
+public class TestCat {
+    public static void main(String[] args) {
+        System.out.println("Starting...");
+        Cat cat = new Cat();
+    }
+}
+// Output:
+// % java TestCat
+// Starting...
+// Making a Feline
+// Making a Cat
+```
+*What is happening?*
+
+1. When a new subclass is created, the Cat's constructor goes into a stack frame at the top of the stack. 
+2. Cat() invokes the superclass constructor, which pushes the Feline() constructor onto the top of the stack.
+3. Feline() invokes the superclass constructor, which pushes the Object() constructor onto the top of the stack.
+
+The correct way of calling the superclass constructor would be:
+```java
+public class Cat extends Feline {
+    int size;
+
+    public Cat(int newSize) {
+        super(); // This would be the right way of calling the  
+                 // superclass constructor, but if we don't, the 
+                 // compiler does it automatically
+    }
+}
+```
+
+Same as a child cannot exist before the parents, **the superclass parts of an object has to be completely built before the subclass parts can be constructed**.
+
+The **call to super()** **MUST be the FIRST** statement in each constructor (with an exception that will be explained later on), or be left for the compiler to put.
+
+We can also pass arguments on the super() call if the superclass needs them to instantiate:
+
+```java
+public abstract class Animal {
+    private String name; // ALL animals, including subclasses, have a name
+
+    public String getName(){
+        return name;   // A getter method that Seal inherits
+    }
+
+    public Animal(String theName) {
+        name = theName;
+    }
+}
+__________________
+
+public class Seal extends Animal {
+    public Seal(String name) { // Seal constructor takes a name
+        super(name);  // It sends the name up the Stack to the
+    }                 // Animal constructor
+}
+__________________
+
+public class MakeSeal {
+    public static void main(String[] args) {
+        Seal s = new Seal("Sally");
+        System.out.println(s.getName()); // Prints Sally
+    }
+}
+```
+
+### Invoking one overloaded constructor from another
+
+* We can use "__this()__" to call a constructor from another overloaded constructor in the same class.
+* The call to "**this()** can be used only in a constructor, and MUST be the FIRST statement in a constructor.
+* Constructor can have a call to **super()** OR **this()**, but never both!.
+
+```java
+import java.awt.Color;
+
+class Daffodil extends Flower {
+    private Color color;
+
+    public Daffodil() {  // The no-arg constructor supplies a default
+        this(Color.YELLOW); // Color and calls the overloaded REAL 
+    }                     // Constructor (the one that calls super())
+    
+    public Daffodil(Color c) {  // This is The REAL Constructor that 
+        super("Daffodil");  // does the REAL work of initializing the
+        color = c;          // object (including the call to super())
+        // ...
+    }
+
+    public Daffodil(int petals) {
+        this(Color.YELLOW);  // THIS WON'T WORK!! Can't have both
+        super(petals);  // super() and this() in the same constructor
+    }                   // because both of them need to be first
+}
+```
+
+## Object's life
+
+An object lives as long as it's references are still "alive". The life of these references depends on whether the variable is a *local* variable or an *instance* variable:
+* A **local variable** lives only within the method that declared it, and the variable scope is only within that method.
+* An **instance variable** lives as long as the object does.
+
+When a method with local variables calls another, the latter is put on top of the stack
+* The **local variables** of the method **on top** of the stack are **alive** and **in scope**. 
+* The variables of methods that are on other positions of the stack, are **alive** but **not in scope**.
+* Once the method completes and is removed from the stack, its variables **not alive or in scope**
+
+Local variables are only **in scope** within their own method. We can only use that variable when its method is on top of the Stack.
+
+
+
