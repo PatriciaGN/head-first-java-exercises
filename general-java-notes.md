@@ -74,18 +74,6 @@ switch (day) {
 // Outputs "Thursday" (day 4)
 ```
 
-## String
-
-| Method | Description | Returns | Exception |
-|-----|------|-----|-----|
-|`str.replaceAll("a", "e");` | Replaces all ocurrences of "a" to "e". Uses Regex. |  Replaced string | PatternSyntaxException |
-| `str.replace("a", "e");` | Replaces all ocurrencences of "a" to "e". Does not use Regex, just chars. | Replaced string| |
-| `str.replaceFirst("a", "e");` | Replaces the first match "a" with "e". Uses Regex. | Replaced string | |
-|`str.toCharArray();` | Converts a string to a new char array | New char array| | 
-
-
-
-
 ## Array 
 
 To declare an Array
@@ -147,6 +135,13 @@ Cat cat1 = new Cat();
 |`str.stream().collect(Collectors.joining(", "));` | Converts a list of strings into a joined string | New joined string | `import java.util.Arrays;`, `import java.util.List;`, `import java.util.stream.Collectors;`, `import java.util.stream.Stream;` | 
 
 
+## Boolean
+
+| Method | Description | Returns | Imports |
+|-----|------|-----|-----|
+|`Boolean.parseBoolean("True");`| Converts string to boolean, ignores the cases of the characters | Returns the boolean| |
+
+
 ## Char 
 
 In Java, char type is trated as an int, and trying to add two chars together adds their unicode values and returns an int.
@@ -157,11 +152,20 @@ To concatenate chars together as a String, do:
 |-----|------|-----|-----|
 |
 
+## Double
+
+| Method | Description | Returns | Imports |
+|-----|------|-----|-----|
+|`Double.parseDouble("420.24");` | Converts a string to a double | Returns the double | |
+|`Double.toString(d);` | Converts a double to a string | Returns a string | |
+
+
 ## Integer
 
 | Method | Description | Returns | Imports |
 |-----|------|-----|-----|
 |`Integer.toString(2)` | | Returns the integer as a string | |
+|`Integer.parseInt("3")`| Converts a string into a primitive value | Returns the primitive value | |
 
 ## Object
 All objects we create in Java are subclasses of class Object and inherit all its methods.
@@ -176,4 +180,33 @@ All objects we create in Java are subclasses of class Object and inherit all its
 
 ## Math
 
-`return (int) Math.ceil(month / 3.)`  -> To round up
+| Method | Description | Returns | Other info |
+|-----|------|-----|-----|
+|`Math.abs(number);` | To get the absolute value of a number | Returns the absolute value of the argument||
+|`Math.random();` | To get random numbers| Returns a double between 0.0 (including) up to 1.0 (not including) | (Java.util.Random does a similar job)|
+|`Math.round(float);`| To round numbers | Returns an int or a long (depending on argument being a float or a double) rounded to the nearest int value| |
+|`Math.min(x, y);`| Finds the minimum value | Returns a value that is the minimum or the two arguments||
+|`Math.max(x, y);` | Finds the maximum value | Returns a value that is the maximum of the two arguments| |
+|`Math.sqrt(number);`| To square a value| Returns the positive square root of the argument. It takes a double or anything that fits within| | 
+
+## String
+
+| Method | Description | Returns | Exception |
+|-----|------|-----|-----|
+|`double d = 42.5; String doubleString = "" + d;` | To convert primitives into strings, we can use this expression (string concatenator) | String| |
+|`String.format("%", x);` | It will format a string (second arg) as per instructions on first arg (format specifier) | Modified string| |
+|`str.replaceAll("a", "e");` | Replaces all ocurrences of "a" to "e". Uses Regex. |  Replaced string | PatternSyntaxException |
+| `str.replace("a", "e");` | Replaces all ocurrencences of "a" to "e". Does not use Regex, just chars. | Replaced string| |
+| `str.replaceFirst("a", "e");` | Replaces the first match "a" with "e". Uses Regex. | Replaced string | |
+|`str.toCharArray();` | Converts a string to a new char array | New char array| | 
+|`double d = 42.5; String.valueOf(d);`| To convert primitives into strings | String | | 
+
+
+### **Formatting strings**
+The "%" sign tells the formatter to insert the other method argument there AND format it using the modifier.
+
+For example, the following format specifier(%.2f) would insert the second argument as a float rounded to two decimals:
+
+`String.format(I have %.2f, bugs to fix.", 478789.098);` --> `I have 478789.10 bugs to fix.`
+
+ 
