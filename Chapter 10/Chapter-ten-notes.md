@@ -204,3 +204,26 @@ If there is **more than one argument**, we can use several format specifiers, in
 
 
 
+
+## Static imports
+
+Static imports remove the information about which class the static comes from and can save a lot of typing, but depending on how they are used, can also create naming conflicts with other classes we may have created.
+
+```java
+// Without static imports:
+
+System.out.println(Math.sqrt(2.0)); 
+
+_____________
+
+// With static imports:
+
+import static java.lang.Math.*; // We can use wildcards
+import static java.lang.System.out;
+
+out.println(sqrt(2.0)); 
+
+// out.println might be a bad place to use a static import as it can make the code unclear and create naming conflicts
+
+// with "sqrt" it is still quite clear what it is doing, so it may be a good place to use a static import.
+```
