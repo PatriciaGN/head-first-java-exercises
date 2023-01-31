@@ -1,4 +1,4 @@
-# Notes from chapter 9
+# Notes from chapter 9 - Constructors and garbage collection
 
 Java has two important areas of memory: The **Stack** is where all **method invocations and local variables** live, the **Heap** is where all **objects** live.
 

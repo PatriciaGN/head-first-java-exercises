@@ -1,4 +1,4 @@
-# Notes from chapter 8
+# Notes from chapter 8 - Interfaces and abstract classes
 
 ## Abstraction
 

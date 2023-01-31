@@ -1,4 +1,4 @@
-# Chapter 4 notes (How objects behave: Methods use instance variables)
+# Chapter 4 notes - How objects behave: Methods use instance variables
 
 A class is a blueprint for an object.
 Objects have **state** (instance variables) and **behavior** (methods). Each object (or instance of a class) can have its own unique values for its instance variables.

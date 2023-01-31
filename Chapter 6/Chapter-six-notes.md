@@ -1,4 +1,4 @@
-# Notes from chapter 6
+# Notes from chapter 6 - Java API
 
 ## Java library (Java API)
 Java has lots of **prebuilt classes** in the Java library, known as the **Java API**.

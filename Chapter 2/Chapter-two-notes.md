@@ -1,4 +1,4 @@
-# Notes from chapter two (OOP)
+# Notes from chapter two - OOP
 
 The dot operator (.) gives us access to an object's state and behaviour:
 ```java Cat luna = new Cat()

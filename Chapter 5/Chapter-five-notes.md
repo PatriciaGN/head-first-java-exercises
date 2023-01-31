@@ -1,4 +1,4 @@
-# Notes from Chapter Five
+# Notes from Chapter Five - Writing a program
 
 When drawing flow diagrams:
 * **Circle**: Means start or finish.

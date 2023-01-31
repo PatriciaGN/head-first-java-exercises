@@ -1,4 +1,4 @@
-# Notes from Chapter 3 (Variables)
+# Notes from Chapter 3 - Variables
 
 We need to tell Java the type of a variable when we create it, and this variable will only be able to hold values of that type. If a variable is marked as *final*, that variable is inmutable.
 
