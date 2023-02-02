@@ -19,5 +19,5 @@ class SongV2 {
   }
   public String toString() {
     return title;                // This method overrides toString() in the Object class, so that instead
-  }                              of printing its identifier code, it will print the song title.
+  }                              // of printing its identifier code, it will print the song title.
 }
