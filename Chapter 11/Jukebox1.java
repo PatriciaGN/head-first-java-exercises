@@ -10,7 +10,7 @@ public class Jukebox1 {
   public void go() {
     List<SongV2> songList = MockSongs.getSongsV2();
     System.out.println(songList);
-    Collections.sort(songList);
+    Collections.sort(songList); // Now that we have a list of SongsV2, the sort method doesn't know what to sort it on (title, bpm...), so it doesn't compile
     System.out.println(songList);
   }
 }
