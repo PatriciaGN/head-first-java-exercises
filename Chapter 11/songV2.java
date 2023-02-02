@@ -1,4 +1,4 @@
-class SOngV2 {
+class SongV2 {
   private String title;
   private String artist;
   private int bpm;
