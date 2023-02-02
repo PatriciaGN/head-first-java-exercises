@@ -1,3 +1,5 @@
+// On this exercise, we want to be able to print a list of songs in alphabetical order
+
 import java.util.*;
 
 public class Jukebox1 {
@@ -7,6 +9,8 @@ public class Jukebox1 {
   
   public void go() {
     List<String> songList = MockSongs.getSongStrings();
+    System.out.println(songList);
+    Collections.sort(songList);
     System.out.println(songList);
   }
 }
