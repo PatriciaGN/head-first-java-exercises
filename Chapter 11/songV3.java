@@ -4,10 +4,10 @@ class SongV3 implements Comparable<SongV3> {  // We write "<SongV3> to specify t
   private int bpm;
   
   public int compareTo(SongV3 aSong) {
-    return title.compareTo(aSong.getTitle());   // The sort() method sens a song to compareTo() to see how it compares to the song the method was invoked on  
+    return title.compareTo(aSong.getTitle());   // The sort() method sends a song to compareTo() to see how it compares to the song the method was invoked on  
   }
   
-  SongV3 (String title, String artlist, int bpm) {
+  SongV3 (String title, String artist, int bpm) {
     this.title = title;
     this.artist = artist;
     this.bpm = bpm;
