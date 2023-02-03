@@ -8,7 +8,7 @@ public class Jukebox1 {
   }
   
   public void go() {
-    List<SongV2> songList = MockSongs.getSongsV2();
+    List<SongV3> songList = MockSongs.getSongsV3();
     System.out.println(songList);
     Collections.sort(songList); // Now that we have a list of SongsV2, the sort method doesn't know what to sort it on (title, bpm...), so it doesn't compile. This is because Song is not a subtype of Comparable, so we cannot sort() the list of songs.
     System.out.println(songList);
@@ -27,14 +27,14 @@ class MockSongs {
     return songs;
   }
   
-  public static List<SongV2> getSongsV2() {
-    List<SongV2> songs = new ArrayList<>();
-    songs.add(new SongV2("somersault", "zero 7", 147));
-    songs.add(new SongV2("cassidy", "grateful dead", 158));
-    songs.add(new SongV2("$10", "hitchiker", 140));
-    songs.add(new SongV2("havana", "cabello", 105));
-    songs.add(new SongV2("Cassidy", "grateful dead", 158));
-    songs.add(new SongV2("50 ways", "simon", 102));
+  public static List<SongV3> getSongsV3() {
+    List<SongV3> songs = new ArrayList<>();
+    songs.add(new SongV3("somersault", "zero 7", 147));
+    songs.add(new SongV3("cassidy", "grateful dead", 158));
+    songs.add(new SongV3("$10", "hitchiker", 140));
+    songs.add(new SongV3("havana", "cabello", 105));
+    songs.add(new SongV3("Cassidy", "grateful dead", 158));
+    songs.add(new SongV3("50 ways", "simon", 102));
     return songs;
   }
 }
