@@ -89,3 +89,27 @@ On the above examples, the **first one** where `<T extends Animal>` is part of t
 
 On the **second one**, where the method argument is `(ArrayList<ANimal> list)` means that **ONLY** an `ArrayList<Animal>` is legal.
 
+________________
+
+On the example exercise (Jukebox1) the file fails to compile when we try to use the method "sort()" on a list of "SongV1" objects. If we look into the docs again for the sort() method:
+
+`static <T extends Comparable <? superT>> void sort(List<T> List)` 
+
+"SongV1" would substitute "T", but the sort() method can only take a list of "Comparable objects" (`<T extends Comparable>`).
+
+**In generics, "extends" means "extends OR implements"**. 
+The word "extends" in this case means "IS-A" and works or both classes and interfaces.
+
+## Using a Comparator
+A **Comparable** element in a list can compare itself to another of its own type in only one way, using its compareTo() method. But a **Comparator** is external to the element type we are comparing. Because it is a separate **class**, we can make as many as we want.
+Then, we will need to call a sort() method that takes a Comparator (Collections.sort or List.sort) which will use this Comparator to put things in order. 
+
+If our **sort() method gets a Comparator**, it will not be calling compareTo() anymore, but instead use the compare() method on the Comparator.
+
+To summarize:
+* Invoking the **Collections.sort(List list)** method means the list element's **compareTo()** method determines the order. The elements in the list MUST **implement the Comparable interface**.
+
+* Invoking **List.sort(List list, Comparator c)** or **Collections.sort**(List list, Comparator c) means the **Comparator's compare()** method will me used. That means the elements in the list do NOT need to implement the Comparable interface, but if they do, the list element's compareTo() method will NOT be called.
+
+
+
