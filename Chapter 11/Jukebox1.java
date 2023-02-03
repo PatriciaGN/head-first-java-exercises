@@ -10,7 +10,10 @@ public class Jukebox1 {
   public void go() {
     List<SongV3> songList = MockSongs.getSongsV3();
     System.out.println(songList);
-    Collections.sort(songList); // Now that we have a list of SongsV2, the sort method doesn't know what to sort it on (title, bpm...), so it doesn't compile. This is because Song is not a subtype of Comparable, so we cannot sort() the list of songs.
+    // Collections.sort(songList);  Now that we are sorting the songs by title AND by artist, it is not very good practice to have two different mechanisms to sort by each of them.
+    
+    TitleCompare titleCompare = new TitleCompare();
+    songList.sort(titleCompare);
     
     System.out.println(songList);
         
@@ -18,6 +21,12 @@ public class Jukebox1 {
     songList.sort(artistCompare); // Invoke sort() on our list, passing it a reference to the new custom Comparator object.
     
     System.out.println(songList);
+  }
+}
+
+class TitleCompare implements Comparator<SongV3> {
+  public int compare(SongV3 one, SongV3 two) {  // returns an int (-1, 0, 1 depending on whether one song should go before the other)
+    return one.getTitle().compareTo(two.getTitle());
   }
 }
 
